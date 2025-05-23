@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Message Details</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        padding: 2rem;
+        color: #333;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+        font-size: 2rem;
+      }
+
+      .message-details {
+        background: #fff;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: 2rem auto;
+      }
+
+      .message-details p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+
+      .message-details p strong {
+        font-weight: bold;
+        color: #007bff;
+      }
+
+      a {
+        display: inline-block;
+        margin-top: 2rem;
+        font-size: 1rem;
+        color: #007bff;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        border: 1px solid #007bff;
+        background-color: white;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      a:hover {
+        background-color: #007bff;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Message Details</h1>
+
+    <div class="message-details">
+      <p><strong>User:</strong> <%= message.user %></p>
+      <p><strong>Text:</strong> <%= message.text %></p>
+      <p><strong>Posted At:</strong> <%= message.added.toLocaleString() %></p>
+    </div>
+
+    <a href="/">← Back to all messages</a>
+  </body>
+</html>

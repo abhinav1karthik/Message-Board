@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 2rem;
+        background: #f9f9f9;
+      }
+      h1 {
+        color: #333;
+      }
+      .message {
+        margin-bottom: 1rem;
+        padding: 1rem;
+        border: 1px solid #ddd;
+        background: #fff;
+        border-radius: 5px;
+      }
+      .meta {
+        color: #888;
+        font-size: 0.9rem;
+      }
+      button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      a {
+        text-decoration: none;
+        color: #007bff;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <ul>
+      <% messages.forEach(function(message, index) { %>
+      <li class="message">
+        <strong><%= message.user %></strong>: <%= message.text %>
+        <small class="meta">(<%= message.added.toLocaleString() %>)</small>
+        <a href="/message/<%= index %>">
+          <button>Open</button>
+        </a>
+      </li>
+      <% }) %>
+    </ul>
+
+    <a href="/new">Add New Message</a>
+  </body>
+</html>
