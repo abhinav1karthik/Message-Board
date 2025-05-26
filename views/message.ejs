@@ -58,9 +58,12 @@
     <h1>Message Details</h1>
 
     <div class="message-details">
-      <p><strong>User:</strong> <%= message.user %></p>
+      <p><strong>User:</strong> <%= message.username %></p>
       <p><strong>Text:</strong> <%= message.text %></p>
-      <p><strong>Posted At:</strong> <%= message.added.toLocaleString() %></p>
+      <p>
+        <strong>Posted At:</strong> <%= new Date(message.added).toLocaleString()
+        %>
+      </p>
     </div>
 
     <a href="/">← Back to all messages</a>

@@ -47,15 +47,15 @@
     <ul>
       <% messages.forEach(function(message, index) { %>
       <li class="message">
-        <strong><%= message.user %></strong>: <%= message.text %>
+        <strong><%= message.username %></strong>: <%= message.text %>
+
         <small class="meta">(<%= message.added.toLocaleString() %>)</small>
-        <a href="/message/<%= index %>">
+        <a href="/message/<%= message.id%>">
           <button>Open</button>
         </a>
       </li>
       <% }) %>
     </ul>
-
     <a href="/new">Add New Message</a>
   </body>
 </html>
